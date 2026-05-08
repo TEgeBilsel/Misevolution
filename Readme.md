@@ -2,7 +2,7 @@
 
 <div align="center">
 
-#  Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents
+#  Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents （ICLR 2026）
 
 </div>
 
@@ -30,6 +30,7 @@
 
 
 # 📢News
+- **[2025/01/29]** Our paper is accepted by ICLR! 🎉🎉 
 - **[2025/10/06]** Our paper is available on [Huggingface](https://huggingface.co/papers/2509.26354). If you enjoy our work, we warmly invite you to **upvote** it on Huggingface!
 - **[2025/09/30]** Our paper is available on [arXiv](https://arxiv.org/pdf/2509.26354). 
 
