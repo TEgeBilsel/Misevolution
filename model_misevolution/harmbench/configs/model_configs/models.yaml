@@ -369,20 +369,20 @@ gpt-4-0613:
 gpt-4o:
   model:
     model_name_or_path: gpt-4o-2024-11-20
-    token: sk-9X0T83ajjizfFHdqOySdkFfIQyVQGvpNXpZHBseT3usxK3TX
+    token: <your_openai_token>
   model_type: closed_source
 
 gpt-4.1-2025-04-14:
   model:
     model_name_or_path: gpt-4.1-2025-04-14
-    token: sk-9X0T83ajjizfFHdqOySdkFfIQyVQGvpNXpZHBseT3usxK3TX
+    token: <your_openai_token>
   model_type: closed_source
 
 
 claude-3-7-sonnet-latest:
   model:
     model_name_or_path: claude-3-7-sonnet-latest
-    token: sk-9X0T83ajjizfFHdqOySdkFfIQyVQGvpNXpZHBseT3usxK3TX
+    token: <your_anthropic_token>
   model_type: closed_source
 
 gpt-4-vision-preview:
