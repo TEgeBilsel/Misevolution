@@ -19,12 +19,10 @@ num_tokens=4096
 
 models=(
     # models before self-evolution
-    qwen2.5_3b_base
     qwen2.5_3b_coder
 
     # models after self-evolution
     absolute_zero_3b_coder
-    absolute_zero_3b_base
 )
 
 for model in "${models[@]}"; do
