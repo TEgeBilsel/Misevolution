@@ -209,7 +209,7 @@ def run_step2_single_job(mode, partition, job_name, num_gpus, output_log, model_
         # Construct the local command with all parameters and script arguments (with -u in case the output is piped to another file)
         incremental_update_str = "--incremental_update" if incremental_update else ""
         command = f"python -u generate_completions.py --model_name={model_name} --behaviors_path={behaviors_path} --test_cases_path={test_cases_path} \
-            --save_path={save_path} --max_new_tokens={max_new_tokens} --temperature={temperature} --generate_with_vllm {incremental_update_str}"
+            --save_path={save_path} --max_new_tokens={max_new_tokens} --temperature={temperature} {incremental_update_str}"
         # Execute the local command
         if mode == 'local':
             subprocess.run(command, shell=True, capture_output=False, text=True)
