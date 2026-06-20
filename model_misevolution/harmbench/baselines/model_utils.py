@@ -291,6 +291,8 @@ def load_model_and_tokenizer(
 ):  
     if token:
         hf_login(token=token)
+
+    model_kwargs.pop("temperature", None)
     
 
     model = AutoModelForCausalLM.from_pretrained(model_name_or_path, 
