@@ -20,6 +20,8 @@ class QwenAPI(BaseAPI):
         #     self.generation_config['temperature'] = 1.0
         self.tokenizer = AutoTokenizer.from_pretrained(tokenizer_path, trust_remote_code=True)
         self.model = AutoModelForCausalLM.from_pretrained(model_path, trust_remote_code=True, torch_dtype=torch.float16).to(self.device).eval()
+        print("cuda available:", torch.cuda.is_available())
+        print("model device:", next(self.model.parameters()).device)
         self.tokenizer.padding_side = 'left'
         print('finish loading')
 
