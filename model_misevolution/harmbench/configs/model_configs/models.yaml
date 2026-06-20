@@ -32,6 +32,28 @@
 
 
 # base models
+qwen2.5_3b_base:
+  model:
+    model_name_or_path: Qwen/Qwen2.5-3B
+    use_fast_tokenizer: True
+    dtype: bfloat16
+    eos_token: <|endoftext|>
+    chat_template: qwen
+    trust_remote_code: True 
+  num_gpus: 1
+  model_type: open_source
+
+qwen2.5_3b_coder:
+  model:
+    model_name_or_path: Qwen/Qwen2.5-Coder-3B
+    use_fast_tokenizer: True
+    dtype: bfloat16
+    eos_token: <|endoftext|>
+    chat_template: qwen
+    trust_remote_code: True 
+  num_gpus: 1
+  model_type: open_source
+
 qwen2.5_7b_base:
   model:
     model_name_or_path: Qwen/Qwen2.5-7B
@@ -78,6 +100,28 @@ qwen2.5_14b_coder:
 
 
 # absolute zero models
+absolute_zero_3b_coder:
+  model:
+    model_name_or_path: andrewzh/Absolute_Zero_Reasoner-Coder-3b
+    use_fast_tokenizer: True
+    dtype: bfloat16
+    eos_token: <|endoftext|>
+    chat_template: qwen
+    trust_remote_code: True 
+  num_gpus: 1
+  model_type: open_source
+
+absolute_zero_3b_base:
+  model:
+    model_name_or_path: andrewzh2/Absolute_Zero_Reasoner-Base-3b
+    use_fast_tokenizer: True
+    dtype: bfloat16
+    eos_token: <|endoftext|>
+    chat_template: qwen
+    trust_remote_code: True 
+  num_gpus: 1
+  model_type: open_source
+
 absolute_zero_7b_base:
   model:
     model_name_or_path: andrewzh2/Absolute_Zero_Reasoner-Base-7b

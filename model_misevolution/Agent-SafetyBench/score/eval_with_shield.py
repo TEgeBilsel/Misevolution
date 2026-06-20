@@ -38,7 +38,6 @@ def create_model_tokenizer(model_path, tokenizer_path):
 
     model = AutoModelForCausalLM.from_pretrained(
         model_path,
-        load_in_8bit=False,
         torch_dtype=load_type,
         trust_remote_code=True,
         # attn_implementation='flash_attention_2'
