@@ -83,6 +83,9 @@ elif model_name == 'llama3.1-405b':
     agent_api = LlamaCloudAPI(model_name='meta-llama/llama-3.1-405b-instruct', generation_config=api_model_generation_config)
 
 # local model
+elif model_name == 'qwen2.5-3b-inst':
+    model_path = "Qwen/Qwen2.5-3B-Instruct"
+    agent_api = QwenAPI(model_path=model_path, tokenizer_path=model_path, generation_config=local_model_generation_config)
 elif model_name == 'qwen2.5-7b-inst':
     model_path = "Qwen/Qwen2.5-7B-Instruct"
     agent_api = QwenAPI(model_path=model_path, tokenizer_path=model_path, generation_config=local_model_generation_config)

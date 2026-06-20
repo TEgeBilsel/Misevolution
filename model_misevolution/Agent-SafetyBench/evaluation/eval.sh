@@ -2,8 +2,7 @@
 
 
 models=(
-  llama3.1-70b-inst
-  llama3.1-70b-inst-agentgen
+  qwen2.5-3b-inst
 )
 
 

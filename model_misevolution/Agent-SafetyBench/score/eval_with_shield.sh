@@ -5,8 +5,7 @@ eval_model_path='thu-coai/ShieldAgent'
 
 
 model_list=(
-  llama3.1-70b-inst
-  llama3.1-70b-inst-agentgen
+  qwen2.5-3b-inst
 )
 
 for model_name in "${model_list[@]}"; do
