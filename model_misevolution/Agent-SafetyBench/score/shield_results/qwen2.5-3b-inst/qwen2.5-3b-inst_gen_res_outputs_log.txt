@@ -1,0 +1,6 @@
+pred safe num / ratio: 440 / 0.22055137844611528
+pred unsafe num / ratio: 1555 / 0.7794486215538847
+Evaluated instances:  1995
+No human annotated labels for the ../evaluation/evaluation_results/tot-qwen2.5-3b-instgen_res.json.
+close.started
+close.complete
