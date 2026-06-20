@@ -15,7 +15,7 @@ behaviors_path=./data/behavior_datasets/harmbench_behaviors_text_all.csv
 
 base_save_dir=./results_harmbench_temp${temperature}
 
-num_tokens=1024
+num_tokens=512
 
 models=(
     # models before self-evolution
