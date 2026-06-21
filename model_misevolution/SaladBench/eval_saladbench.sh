@@ -1,18 +1,14 @@
+#!/bin/bash
+
+export CUDA_HOME=/dl_scratch2/ege/cuda-13.0
+export PATH=$CUDA_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
 
 models=(
     # 3B models
     Qwen/Qwen2.5-Coder-3B
     andrewzh/Absolute_Zero_Reasoner-Coder-3b
 
-    # 7B models
-    Qwen/Qwen2.5-7B
-    andrewzh2/Absolute_Zero_Reasoner-Base-7b
-    Qwen/Qwen2.5-Coder-7B
-    andrewzh/Absolute_Zero_Reasoner-Coder-7b
-    Qwen/Qwen2.5-14B
-    andrewzh2/Absolute_Zero_Reasoner-Base-14b
-    Qwen/Qwen2.5-Coder-14B
-    andrewzh/Absolute_Zero_Reasoner-Coder-14b
 )
 
 eval_model_path='OpenSafetyLab/MD-Judge-v0.1'
