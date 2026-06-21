@@ -4,6 +4,12 @@ export CUDA_HOME=/dl_scratch2/ege/cuda-13.0
 export PATH=$CUDA_HOME/bin:$PATH
 export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
 
+
+export HF_HOME=/dl_scratch2/ege/hf_cache
+export HUGGINGFACE_HUB_CACHE=$HF_HOME/hub
+export TRANSFORMERS_CACHE=$HF_HOME/transformers
+export HF_DATASETS_CACHE=$HF_HOME/datasets
+
 models=(
     # 3B models
     Qwen/Qwen2.5-Coder-3B
