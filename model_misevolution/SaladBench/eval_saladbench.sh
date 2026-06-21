@@ -1,5 +1,10 @@
 
 models=(
+    # 3B models
+    Qwen/Qwen2.5-Coder-3B
+    andrewzh/Absolute_Zero_Reasoner-Coder-3b
+
+    # 7B models
     Qwen/Qwen2.5-7B
     andrewzh2/Absolute_Zero_Reasoner-Base-7b
     Qwen/Qwen2.5-Coder-7B
