@@ -355,10 +355,10 @@ def load_vllm_model(
                 max_model_len=kwargs.get('max_model_len', 8192),
                 tensor_parallel_size=num_gpus)
     
-    if pad_token:
-        model.llm_engine.tokenizer.tokenizer.pad_token = pad_token
-    if eos_token:
-        model.llm_engine.tokenizer.tokenizer.eos_token = eos_token
+    # if pad_token:
+    #     model.llm_engine.tokenizer.tokenizer.pad_token = pad_token
+    # if eos_token:
+    #     model.llm_engine.tokenizer.tokenizer.eos_token = eos_token
 
     return model
 
