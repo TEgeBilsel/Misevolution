@@ -64,7 +64,7 @@ def main():
     num_gpus = torch.cuda.device_count()
     cls = LLM(model=args.cls_path, tensor_parallel_size=num_gpus)
 
-    cls.llm_engine.tokenizer.tokenizer.truncation_side="left"
+    # cls.llm_engine.tokenizer.tokenizer.truncation_side="left"
 
     cls_params = SamplingParams(temperature=0.0, max_tokens=1)
 

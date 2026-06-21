@@ -311,10 +311,10 @@ class VLLM:
                     tokenizer_mode="auto" if use_fast_tokenizer else "slow",
                     tensor_parallel_size=num_gpus)
         
-        if pad_token:
-            model.llm_engine.tokenizer.tokenizer.pad_token = pad_token
-        if eos_token:
-            model.llm_engine.tokenizer.tokenizer.eos_token = eos_token
+        # if pad_token:
+        #     model.llm_engine.tokenizer.tokenizer.pad_token = pad_token
+        # if eos_token:
+        #     model.llm_engine.tokenizer.tokenizer.eos_token = eos_token
 
         return model 
 
