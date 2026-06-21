@@ -1,6 +1,6 @@
 import multiprocessing
 import transformers
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers import AutoTokenizer
 from vllm import LLM, SamplingParams
 import json
 import argparse
@@ -61,53 +61,12 @@ def main():
             completion['generation'] = clipped_generation
 
     # ========== evaluate completions ========== #
-    class HFClassifierWrapper:
-        def __init__(self, model_path):
-            self.tokenizer = AutoTokenizer.from_pretrained(model_path)
-            self.tokenizer.truncation_side = "left"
-            self.model = AutoModelForCausalLM.from_pretrained(
-                model_path,
-                torch_dtype=torch.bfloat16,
-                device_map="auto",
-            ).eval()
+    num_gpus = torch.cuda.device_count()
+    cls = LLM(model=args.cls_path, tensor_parallel_size=num_gpus)
 
-        def generate(self, prompts, sampling_params=None, **kwargs):
-            if isinstance(prompts, str):
-                prompts = [prompts]
+    cls.llm_engine.tokenizer.tokenizer.truncation_side="left"
 
-            inputs = self.tokenizer(
-                prompts,
-                return_tensors="pt",
-                padding=True,
-                truncation=True,
-                max_length=2048,
-            ).to(self.model.device)
-
-            with torch.no_grad():
-                outputs = self.model.generate(
-                    **inputs,
-                    max_new_tokens=1,
-                    do_sample=False,
-                    pad_token_id=self.tokenizer.eos_token_id,
-                )
-
-            generated = outputs[:, inputs["input_ids"].shape[1]:]
-            texts = self.tokenizer.batch_decode(generated, skip_special_tokens=True)
-
-            class Obj:
-                pass
-
-            wrapped = []
-            for text in texts:
-                o = Obj()
-                oo = Obj()
-                oo.text = text
-                o.outputs = [oo]
-                wrapped.append(o)
-            return wrapped
-
-    cls = HFClassifierWrapper(args.cls_path)
-    cls_params = None
+    cls_params = SamplingParams(temperature=0.0, max_tokens=1)
 
     from eval_utils import compute_results_hashing, compute_results_classifier, compute_results_advbench
 

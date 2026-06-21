@@ -184,10 +184,7 @@ def load_generation_function(model_config, max_new_tokens, test_cases_path, gene
     else:
         print('Using HF generation')
         model, tokenizer = load_model_and_tokenizer(**model_config)
-        if model_config['temperature'] == 0.0:
-            generation_kwargs = dict(max_new_tokens=max_new_tokens, do_sample=False)
-        else:
-            generation_kwargs = dict(max_new_tokens=max_new_tokens, do_sample=True, temperature=model_config['temperature'])
+        generation_kwargs = dict(max_new_tokens=max_new_tokens, do_sample=True,temperature=model_config['temperature'])
         TEMPLATE = get_template(model_name_or_path, chat_template=model_config.get('chat_template', None))
         return partial(_hf_generate_with_batching, model=model, tokenizer=tokenizer, template=TEMPLATE, **generation_kwargs)
 
